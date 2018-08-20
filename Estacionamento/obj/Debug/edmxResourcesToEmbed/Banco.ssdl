@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbEstacionamentoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TB_CARRO">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AnoFabricacao" Type="int" />
+    <Property Name="AnoModelo" Type="int" />
+    <Property Name="Cor" Type="varchar" MaxLength="50" />
+    <Property Name="Marca" Type="varchar" MaxLength="100" />
+    <Property Name="Modelo" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TB_ESTACIONAMNETO">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="100" />
+    <Property Name="NomeCliente" Type="varchar" MaxLength="100" />
+    <Property Name="Telefone" Type="int" />
+    <Property Name="Valor" Type="float" />
+    <Property Name="DataEntrada" Type="date" />
+    <Property Name="DataSaida" Type="date" />
+  </EntityType>
+  <EntityContainer Name="dbEstacionamentoModelStoreContainer">
+    <EntitySet Name="TB_CARRO" EntityType="Self.TB_CARRO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_ESTACIONAMNETO" EntityType="Self.TB_ESTACIONAMNETO" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
